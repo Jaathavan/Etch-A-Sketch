@@ -1,15 +1,27 @@
 :root {
     --grid: 1;
 }
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
 #grid-container {
     display: inline-grid;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(252, 252, 252);
     grid-template-rows: repeat(var(--grid), auto);
     grid-template-columns: repeat(var(--grid), auto);
-    height: 95vh;
-    width: 95vh;
+    height: 80vh;
+    width: 80vh;
+    margin-top: 10vh;
 }
 
 .grid-item {
     border: 1px solid rgb(17, 15, 15);
+    background-color: rgb(255, 255, 255);
+}
+
+.grid-item:hover {
+    filter: brightness(85%);
 }

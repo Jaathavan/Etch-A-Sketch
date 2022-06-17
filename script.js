@@ -9,3 +9,13 @@ function createGrid(num) {
 }
 
 createGrid(22);
+
+const grids = document.querySelectorAll('grid-item');
+
+grids.style.backgroundColor ='green'
+
+grids.forEach((g) => {
+    g.addEventListener('mousedown', () => {
+        g.style.backgroundColor = 'black';
+    })
+})
