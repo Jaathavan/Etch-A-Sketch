@@ -26,12 +26,25 @@ function createGrid(num) {
     }
 }
 
-createGrid(100)
-let slider = document.getElementById("myRange");
-let output = document.getElementById("demo");
-let gridsActive = document.querySelectorAll(".grid-item")
-output.textContent = slider.value; 
+createGrid(16)
 
-slider.oninput = function() {
-  output.textContent = this.value;
+const rangeInputs = document.querySelectorAll('input[type="range"]')
+const numberInput = document.querySelector('input[type="number"]')
+
+function handleInputChange(e) {
+  let target = e.target
+  if (e.target.type !== 'range') {
+    target = document.getElementById('range')
+  } 
+  const min = target.min
+  const max = target.max
+  const val = target.value
+  
+  target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
 }
+
+rangeInputs.forEach(input => {
+  input.addEventListener('input', handleInputChange)
+})
+
+numberInput.addEventListener('input', handleInputChange)

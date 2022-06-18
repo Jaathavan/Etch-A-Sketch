@@ -12,10 +12,10 @@
 <body>
     <div id="wrapper">
         <div class="options">
-            <h1>Etch-A-Sketch</h1>
+            <h1 class="title">Etch-A-Sketch</h1>
             <div class="slidecontainer">
-                <input type="range" min="1" max="100" value="16" class="slider" id="myRange">
-                <p>Value: <span id="demo"></span></p>
+                <input type="range" value="16" min="1" max="100" id="range" oninput="rangenumber.value=value"/>
+                <input type="number" id="rangenumber" min="1" max="100" value="16" oninput="range.value=value"> 
             </div>
         </div>
 
