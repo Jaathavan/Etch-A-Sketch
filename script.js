@@ -26,4 +26,12 @@ function createGrid(num) {
     }
 }
 
-createGrid(22);
+createGrid(100)
+let slider = document.getElementById("myRange");
+let output = document.getElementById("demo");
+let gridsActive = document.querySelectorAll(".grid-item")
+output.textContent = slider.value; 
+
+slider.oninput = function() {
+  output.textContent = this.value;
+}

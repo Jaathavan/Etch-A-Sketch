@@ -7,6 +7,7 @@
     align-items: center;
     gap: 4rem;
 }
+
 #grid-container {
     display: inline-grid;
     background-color: rgb(252, 252, 252);
@@ -25,3 +26,37 @@
 .grid-item:hover {
     filter: brightness(85%);
 }
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 1rem;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #04AA6D;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+  }
