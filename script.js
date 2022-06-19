@@ -2,14 +2,17 @@ const gridLayout = document.getElementById('grid-container');
 
 let mouseDown = false;
 
+//check is mouse down and update mouseDown value
 document.body.onmousedown = () => {
     mouseDown = true;
 };
 
+//check if mouse is up and updates mousDown value
 document.body.onmouseup = () => {
     mouseDown = false;
 };
 
+//changes color of root element
 function changeColor() {
     let root = document.documentElement;
     root.style.setProperty('--grid-color', document.getElementById("colorpicker").value)
