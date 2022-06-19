@@ -10,6 +10,11 @@ document.body.onmouseup = () => {
     mouseDown = false;
 };
 
+function changeColor() {
+    let root = document.documentElement;
+    root.style.setProperty('--grid-color', document.getElementById("colorpicker").value)
+}
+
 function createGrid(num) {
     gridLayout.style.setProperty('--grid', num)
     for (let i=0; i < (num**2); i++) {
@@ -17,11 +22,14 @@ function createGrid(num) {
         gridLayout.appendChild(gridBox).className = "grid-item";
         gridBox.addEventListener('mouseover', () => {
             if (mouseDown === true) {
-                gridBox.style.backgroundColor = "#00a2ff";
+                if (gridBox.style.backgroundColor !== 'transparent') {
+                    gridBox.style.backgroundColor = document.getElementById("colorpicker").value
+                }
+                gridBox.style.backgroundColor = document.getElementById("colorpicker").value;
             }
         })
         gridBox.addEventListener('mousedown', () => {
-            gridBox.style.backgroundColor = "#00a2ff";
+            gridBox.style.backgroundColor = document.getElementById("colorpicker").value;
         })
     }
 }
@@ -47,7 +55,7 @@ function handleInputChange(e) {
         g.remove();
     })
   }
-
+  
   createGrid(val);
 
   target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%';
