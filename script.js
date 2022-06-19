@@ -44,6 +44,8 @@ const pSBC=(p,c0,c1,l)=>{
     else return"#"+(4294967296+r*16777216+g*65536+b*256+(f?m(a*255):0)).toString(16).slice(1,f?undefined:-2)
 }
 
+let checkBox = document.querySelector('#check');
+
 function createGrid(num) {
     gridLayout.style.setProperty('--grid', num)
     for (let i=0; i < (num**2); i++) {
@@ -51,10 +53,12 @@ function createGrid(num) {
         gridLayout.appendChild(gridBox).className = "grid-item";
         gridBox.addEventListener('mouseover', () => {
             if (mouseDown === true) {
-                let checkBox = document.querySelector('#check');
                 if (checkBox.checked) {
                     let randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
                     gridBox.style.backgroundColor = randomColor;
+                }
+                else if ([...gridBox.style].some(k => k.startsWith("background") && Boolean(gridBox.style[k]))) {
+                    gridBox.style.backgroundColor = pSBC( -0.5, gridBox.style.backgroundColor);
                 }
                 else {
                     gridBox.style.backgroundColor = document.getElementById("colorpicker").value;
@@ -65,6 +69,9 @@ function createGrid(num) {
             if (checkBox.checked) {
                 let randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
                 gridBox.style.backgroundColor = randomColor;
+            }
+            else if ([...gridBox.style].some(k => k.startsWith("background") && Boolean(gridBox.style[k]))) {
+                gridBox.style.backgroundColor = pSBC( -0.5, gridBox.style.backgroundColor);
             }
             else {
                 gridBox.style.backgroundColor = document.getElementById("colorpicker").value;
