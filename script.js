@@ -8,7 +8,7 @@ document.body.onmousedown = () => {
 
 document.body.onmouseup = () => {
     mouseDown = false;
-  };
+};
 
 function createGrid(num) {
     gridLayout.style.setProperty('--grid', num)
@@ -17,11 +17,11 @@ function createGrid(num) {
         gridLayout.appendChild(gridBox).className = "grid-item";
         gridBox.addEventListener('mouseover', () => {
             if (mouseDown === true) {
-                gridBox.style.backgroundColor = 'black';
+                gridBox.style.backgroundColor = "#00a2ff";
             }
         })
         gridBox.addEventListener('mousedown', () => {
-            gridBox.style.backgroundColor = 'black';
+            gridBox.style.backgroundColor = "#00a2ff";
         })
     }
 }
@@ -47,7 +47,7 @@ function handleInputChange(e) {
         g.remove();
     })
   }
-  
+
   createGrid(val);
 
   target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%';
