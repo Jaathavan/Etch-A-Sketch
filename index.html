@@ -13,6 +13,13 @@
     <div id="wrapper">
         <div class="options">
             <h1 class="title">Etch-A-Sketch</h1>
+            <div class="check">
+                <input id="check" type="checkbox">
+                <label for="check"></label>
+            </div>
+            <br>
+            <br>
+            <br>
             <label for="colorpicker">Color Picker:</label>
             <input type="color" id="colorpicker" value="#00a2ff" onchange="changeColor()">
             <div class="slidecontainer">
@@ -20,7 +27,6 @@
                 <input type="number" id="rangenumber" min="1" max="100" value="16" oninput="range.value=value"> 
             </div>
         </div>
-
         <div id="grid-container">
         </div>
     </div>
