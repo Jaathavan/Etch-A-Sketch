@@ -51,11 +51,24 @@ function createGrid(num) {
         gridLayout.appendChild(gridBox).className = "grid-item";
         gridBox.addEventListener('mouseover', () => {
             if (mouseDown === true) {
-                gridBox.style.backgroundColor = document.getElementById("colorpicker").value;
+                let checkBox = document.querySelector('#check');
+                if (checkBox.checked) {
+                    let randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+                    gridBox.style.backgroundColor = randomColor;
+                }
+                else {
+                    gridBox.style.backgroundColor = document.getElementById("colorpicker").value;
+                }
             }
         })
         gridBox.addEventListener('mousedown', () => {
-            gridBox.style.backgroundColor = document.getElementById("colorpicker").value;
+            if (checkBox.checked) {
+                let randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+                gridBox.style.backgroundColor = randomColor;
+            }
+            else {
+                gridBox.style.backgroundColor = document.getElementById("colorpicker").value;
+            }
         })
     }
 }
