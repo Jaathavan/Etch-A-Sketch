@@ -1,4 +1,9 @@
 # Etch-A-Sketch
+Welcome to my Etch a Sketch Project
+
+It's essentially a simplified pixel notepad
+
+Hope you like it!!!
 
 Credits:
 Animated Background from animated.md
