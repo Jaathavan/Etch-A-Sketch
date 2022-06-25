@@ -5,6 +5,8 @@ It's essentially a simplified pixel notepad
 
 Hope you like it!!!
 
+Website: https://jaathavan.github.io/Etch-A-Sketch/
+
 Credits:
 Animated Background from animated.md
 https://codepen.io/asfarmed/pen/zYQYMy
